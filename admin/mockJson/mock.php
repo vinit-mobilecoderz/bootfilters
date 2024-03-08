@@ -17,7 +17,7 @@
 	{
 	  $ids = $id['reviewId'];
 	 
-       $query = mysqli_query($con,"select DISTINCT boot_reviews.reviewId,boot_reviews.userid,boot_reviews.question_id,boot_reviews.questions,answer1, boot_reguser.username, boot_reguser.email from boot_reviews join boot_reguser on boot_reviews.userid = boot_reguser.id WHERE reviewId = '".$ids."' AND question_id IN (1,2,3) ");
+       $query = mysqli_query($con,"select DISTINCT boot_reviews.reviewId,boot_reviews.userid,boot_reviews.question_id,boot_reviews.questions,answer1, boot_reguser.username, boot_reguser.email, boot_reguser.shop from boot_reviews join boot_reguser on boot_reviews.userid = boot_reguser.id WHERE reviewId = '".$ids."' AND question_id IN (1,2,3) ");
        
        while($row = mysqli_fetch_assoc($query))
 	{
@@ -58,6 +58,7 @@
 	   
 	   $alldata['tester'] = $datas['username'];
 	   $alldata['tester_emailid'] = $datas['email'];
+	   $alldata['shop'] = $datas['shop'];
 	   $alldata['reviewId'] = $review;
 	  
 	  if($cnt == 4)

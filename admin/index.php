@@ -70,7 +70,10 @@
                             <th ng-click="sort('tester')">Tester
                                 <span class="glyphicon sort-icon" ng-show="sortKey=='tester'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
                             </th>
-                             <th ng-click="sort('hobby')">Shop
+                             <th ng-click="sort('hobby')">Category
+                                <span class="glyphicon sort-icon" ng-show="sortKey=='hobby'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                            </th>
+                            <th ng-click="sort('shop')">Shop
                                 <span class="glyphicon sort-icon" ng-show="sortKey=='hobby'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
                             </th>
                              <th >Action</th>
@@ -82,6 +85,7 @@
                             <td>{{user.last_name}}</td> 
                             <td>{{user.tester}}</td>
                             <td>{{user.hobby}}</td>
+                            <td>{{user.shop}}</td>
                             <td><a class="btn btn-danger btn-sm" href='deletereview.php?id={{user.reviewId}}'>Delete</a></td></td>
                         </tr>
                     </tbody>

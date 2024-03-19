@@ -14,10 +14,9 @@ $userid = "";
 $reviewId = "";
 $userdata = [];
 $data = [];
-$my_data  =[];
+
 while ($alldata = mysqli_fetch_assoc($ALL)) {
-    $my_data[] = $alldata; 
-    
+   
     $email = $alldata['email'];
     $shop = $alldata['shop'];
     $reviewId = $alldata['reviewId'];
@@ -42,23 +41,21 @@ while ($alldata = mysqli_fetch_assoc($ALL)) {
             $userdata[$reviewData['questions']] = $reviewData['answer1'];
             // $userdata['answer']   = $reviewData['answer1'];
 
-            if ($reviewData['sections'] === "Boot Data" && $reviewData['questions'] === "BRAND") {
-                $userdata['BrandName'] =  $reviewData['answer1'];
-            } else if ($reviewData['sections'] === "Boot Data" && $reviewData['questions'] === "MODEL") {
-                $userdata['ModelName'] =  $reviewData['answer1'];
-            } else if ($reviewData['sections'] === "Boot Data" && $reviewData['questions'] === "CATEGORY") {
-                $userdata['CategoryName'] =  $reviewData['answer1'];
-            } else if ($reviewData['sections'] === "Boot Data" && $reviewData['questions'] === "GENDER") {
-                $userdata['GenderName'] =  $reviewData['answer1'];
-            } else if ($reviewData['sections'] === "Boot Data" && $reviewData['questions'] === "TEST TYPE") {
-                $userdata['TestType'] =  $reviewData['answer1'];
-            }
+            // if ($reviewData['sections'] === "Boot Data" && $reviewData['questions'] === "BRAND") {
+            //     $userdata['BrandName'] =  $reviewData['answer1'];
+            // } else if ($reviewData['sections'] === "Boot Data" && $reviewData['questions'] === "MODEL") {
+            //     $userdata['ModelName'] =  $reviewData['answer1'];
+            // } else if ($reviewData['sections'] === "Boot Data" && $reviewData['questions'] === "CATEGORY") {
+            //     $userdata['CategoryName'] =  $reviewData['answer1'];
+            // } else if ($reviewData['sections'] === "Boot Data" && $reviewData['questions'] === "GENDER") {
+            //     $userdata['GenderName'] =  $reviewData['answer1'];
+            // } else if ($reviewData['sections'] === "Boot Data" && $reviewData['questions'] === "TEST TYPE") {
+            //     $userdata['TestType'] =  $reviewData['answer1'];
+            // }
         }
         $data[] = $userdata;
     }
 }
-var_dump ($my_data);
-die("Testing csv");
 
 // for ($i = 0; $i < count($data); $i++) {
 //     if (array_key_exists('question1', $data[$i])) {

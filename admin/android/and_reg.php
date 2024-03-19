@@ -23,7 +23,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 		print_r($jsondata);
 		exit();
 	}
-
+	if (empty($shop)) {
+		$response = array("Response" => array("Status" => "0", "userdata" => array("message" => "shop cannot be blank.")));
+		header('Content-type: application/json');
+		$jsondata = json_encode($response);
+		print_r($jsondata);
+		exit();
+	}
 
 	$chkquery = mysqli_query($con, "select username from boot_reguser where username='" . $username . "' or email='" . $email . "'");
 	$chkdata = mysqli_num_rows($chkquery);

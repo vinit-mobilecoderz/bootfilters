@@ -1,4 +1,5 @@
 <?php
+//error_reporting(E_ALL);
 session_start();
 include("connect.php");
 if(!isset($_SESSION['umail'])){
@@ -6,6 +7,7 @@ if(!isset($_SESSION['umail'])){
 }
 $userid = $_SESSION['user_id'];
 $totalscore='';
+$allreview = [];
 $review_q = mysqli_query($con,"select distinct reviewId from boot_reviews where userid='".$userid."'");
 if(mysqli_num_rows($review_q)>0){
 	while($rows = mysqli_fetch_assoc($review_q))
